@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quote Sheet</title>
+    <title></title>
+</head>
+
+
+<body ng-controller='mainController'>
+    <form action="">
+        <input type="text" ng-model="quote.text" placeholder="text">
+        <input type="text" ng-model="quote.author" placeholder="author">
+
+        <input type="button" ng-click='createQuote(quote)' value="NEW QUOTE">
+    </form>
+
+    <div ng-repeat='quote in quotes'>
+        <div style="color: red; cursor: pointer" ng-click='deleteQuote(quote)'>X</div>
+        <li>{{quote.text}}</li>
+        <li>{{quote.author}}</li>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="mainService.js"></script>
+</body>
+
+</html>
